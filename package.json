@@ -1,5 +1,5 @@
 {
-  "name": "api-status",
+  "name": "apistatus",
   "version": "0.1.1",
   "description": "Returns the status of an HTTP request.",
   "main": "index.js",
