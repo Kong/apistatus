@@ -1,6 +1,6 @@
 # API Status [![Travis CI](https://img.shields.io/travis/Mashape/apistatus.svg)](https://travis-ci.org/Mashape/apistatus/) ![License](https://img.shields.io/npm/l/apistatus.svg)
 
-API status is a simple tool that checks if an API is online, it will have a companion service that will power [shields.io](http://shields.io) badges like these:
+API status is a simple tool that checks if an API is online. 
 
 [![API Status](https://img.shields.io/badge/API-online-brightgreen.svg)](http://labs.mashape.com/apistatus) [![API Status](https://img.shields.io/badge/API-404%20client%20error-orange.svg)](http://labs.mashape.com/apistatus) [![API Status](https://img.shields.io/badge/API-501%20server%20error-red.svg)](http://labs.mashape.com/apistatus) [![API Status](https://img.shields.io/badge/API-offline-lightgray.svg)](http://labs.mashape.com/apistatus)
 
