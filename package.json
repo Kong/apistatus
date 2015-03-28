@@ -2,7 +2,7 @@
   "name": "apistatus",
   "version": "0.1.1",
   "description": "Returns the status of an HTTP request.",
-  "main": "index.js",
+  "main": "lib/apistatus.js",
   "scripts": {
     "test": "mocha --timeout 30000"
   },
