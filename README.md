@@ -43,4 +43,4 @@ Forks and pull requests are most welcomed. Please run `npm test` before sending 
 
 ### MIT license
 
-Copyright (c) 2014, Mashape (https://www.mashape.com/)
+Copyright (c) 2015, Mashape (https://www.mashape.com/)
