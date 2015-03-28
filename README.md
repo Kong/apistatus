@@ -15,19 +15,19 @@ npm install apistatus
 ```js
 var apistatus = require('apistatus')
 
-apistatus('http://mockbin.org/get', function(status){
+apistatus('http://mockbin.com/status/200', function(status){
   console.log(status)
-  // { code: 200, message: 'OK', type: 'Online' }
+  // { statusCode: 200, statusType: 'Success', statusDescription: 'OK', online: true }
 })
 
-apistatus('http://notarealdomain35252.org/', function(status){
+apistatus('http://mockbin.com/status/404', function(status){
   console.log(status)
-  // { code: false, message: false, type: 'Offline' }
+  // { statusCode: 404, statusType: 'Client Error', statusDescription: 'Not Found', online: true }
 })
 
-apistatus('http://mockbin.org/404', function(status){
+apistatus('http://notarealdomain35252.com/', function(status){
   console.log(status)
-  // { code: 404, message: 'Not Found', type: 'Error' }
+  // { online: false }
 })
 ```
 

@@ -1,6 +1,6 @@
 {
   "name": "apistatus",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Returns the status of an HTTP request.",
   "main": "lib/apistatus.js",
   "scripts": {
