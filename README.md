@@ -1,5 +1,4 @@
-# API Status - Automated API Testing 
-[![Travis CI](https://img.shields.io/travis/Mashape/apistatus.svg)](https://travis-ci.org/Mashape/apistatus/) ![License](https://img.shields.io/npm/l/apistatus.svg)
+# API Status [![Travis CI](https://img.shields.io/travis/Mashape/apistatus.svg)](https://travis-ci.org/Mashape/apistatus/) ![License](https://img.shields.io/npm/l/apistatus.svg)
 
 API status is a simple tool that checks if an API is online and display badges
 
