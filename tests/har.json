@@ -1,0 +1,148 @@
+{
+  "log": {
+    "version": "1.2",
+    "creator": {
+      "name": "WebInspector",
+      "version": "537.36"
+    },
+    "pages": [
+      {
+        "startedDateTime": "2015-04-02T05:47:13.818Z",
+        "id": "page_1",
+        "title": "https://www.mashape.com/",
+        "pageTimings": {
+          "onContentLoad": 1738.1799221038818,
+          "onLoad": 3852.989912033081
+        }
+      }
+    ],
+    "entries": [
+      {
+        "startedDateTime": "2015-04-02T05:47:13.818Z",
+        "time": 554.1799068450928,
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:9876/ok",
+          "httpVersion": "HTTP/1.1",
+          "headers": [],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": 1047,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [],
+          "cookies": [],
+          "content": {
+            "size": 58331,
+            "mimeType": "text/html",
+            "compression": 44637
+          },
+          "redirectURL": "",
+          "headersSize": 705,
+          "bodySize": 13694,
+          "_transferSize": 14399
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 240.710999998555,
+          "send": 0.054999996791991634,
+          "wait": 309.74000000423996,
+          "receive": 3.673906845505826,
+          "ssl": 240.643999997701
+        },
+        "connection": "702",
+        "pageref": "page_1"
+      },
+      {
+        "startedDateTime": "2015-04-02T05:47:13.818Z",
+        "time": 554.1799068450928,
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:9876/redirect",
+          "httpVersion": "HTTP/1.1",
+          "headers": [],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": 1047,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [],
+          "cookies": [],
+          "content": {
+            "size": 58331,
+            "mimeType": "text/html",
+            "compression": 44637
+          },
+          "redirectURL": "",
+          "headersSize": 705,
+          "bodySize": 13694,
+          "_transferSize": 14399
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 240.710999998555,
+          "send": 0.054999996791991634,
+          "wait": 309.74000000423996,
+          "receive": 3.673906845505826,
+          "ssl": 240.643999997701
+        },
+        "connection": "702",
+        "pageref": "page_1"
+      },
+      {
+        "startedDateTime": "2015-04-02T05:47:13.818Z",
+        "time": 554.1799068450928,
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:9876/fail",
+          "httpVersion": "HTTP/1.1",
+          "headers": [],
+          "queryString": [],
+          "cookies": [],
+          "headersSize": 1047,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/1.1",
+          "headers": [],
+          "cookies": [],
+          "content": {
+            "size": 58331,
+            "mimeType": "text/html",
+            "compression": 44637
+          },
+          "redirectURL": "",
+          "headersSize": 705,
+          "bodySize": 13694,
+          "_transferSize": 14399
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 240.710999998555,
+          "send": 0.054999996791991634,
+          "wait": 309.74000000423996,
+          "receive": 3.673906845505826,
+          "ssl": 240.643999997701
+        },
+        "connection": "702",
+        "pageref": "page_1"
+      }
+    ]
+  }
+}

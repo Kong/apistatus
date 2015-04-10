@@ -1,14 +1,15 @@
 {
   "name": "apistatus",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "description": "Returns the status of an HTTP request.",
   "main": "lib/apistatus.js",
   "scripts": {
-    "test": "mocha --timeout 30000"
+    "test": "mocha --timeout 30000 tests/"
   },
   "author": "Mashape",
   "license": "MIT",
   "dependencies": {
+    "harplayer": "^0.2.0",
     "unirest": "^0.4.0"
   },
   "devDependencies": {
