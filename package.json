@@ -4,7 +4,9 @@
   "description": "Returns the status of an HTTP request.",
   "main": "lib/apistatus.js",
   "scripts": {
-    "test": "mocha --timeout 30000 tests/"
+    "test": "mocha",
+    "coverage": "istanbul cover _mocha -- -R spec",
+    "codeclimate-report-coverage": "codeclimate < coverage/lcov.info"
   },
   "author": "Mashape",
   "license": "MIT",
@@ -13,9 +15,11 @@
     "unirest": "^0.4.0"
   },
   "devDependencies": {
+    "codeclimate-test-reporter": "0.0.4",
     "gulp": "^3.8.11",
     "gulp-jshint": "^1.9.4",
     "gulp-mocha": "^2.0.0",
+    "istanbul": "^0.3.13",
     "mocha": "^2.0.1",
     "nock": "^0.50.0"
   },
@@ -24,11 +28,12 @@
     "url": "https://github.com/mashape/apistatus.git"
   },
   "keywords": [
-    "url",
+    "api",
     "status",
     "http",
     "get",
-    "code"
+    "har",
+    "codes"
   ],
   "bugs": {
     "url": "https://github.com/mashape/apistatus/issues"

@@ -1,6 +1,6 @@
-# API Status [![Travis CI](https://img.shields.io/travis/Mashape/apistatus.svg)](https://travis-ci.org/Mashape/apistatus/) ![License](https://img.shields.io/npm/l/apistatus.svg)
+# API Status [![Test Status](https://img.shields.io/travis/Mashape/apistatus.svg)](https://travis-ci.org/Mashape/apistatus/) [![Test Coverage](https://codeclimate.com/github/Mashape/apistatus/badges/coverage.svg)](https://codeclimate.com/github/Mashape/apistatus) ![License](https://img.shields.io/npm/l/apistatus.svg)
 
-API status is a simple tool to send a request to an API and return response information.
+API status is a simple tool to send API requests and retrieve standard response data.
 
 ### Install
 
@@ -15,25 +15,28 @@ var apistatus = require('apistatus')
 
 apistatus('http://mockbin.com/status/200', function(status){
   console.log(status)
-  // { statusCode: 200, statusType: 'Success', statusDescription: 'OK', online: true }
+  // { online: true, statusCode: 200, category: 'Success', message: 'OK' }
 })
 
 apistatus('http://mockbin.com/status/404', function(status){
   console.log(status)
-  // { statusCode: 404, statusType: 'Client Error', statusDescription: 'Not Found', online: true }
+  // { online: true, statusCode: 404, category: 'Client Error', message: 'Not Found' }
 })
 
 apistatus('http://notarealdomain35252.com/', function(status){
   console.log(status)
   // { online: false }
 })
+
+apistatus(require("har.json"), function(statuses){
+  console.log(statuses)
+  // [{ online: true, statusCode: 200, category: 'Success', message: 'OK' },...
+})
 ```
 
 ### Wishlist
 
-- optional HAR object for the requests to use for full API coverage beyond simple GET requests
-- optional HAR object for the response to check against, essentially automated API testing 
-- a website with logs of status changes and support for periodic checking of saved APIs
+- optionally use the HAR response object to check against, essentially automated API testing 
 
 ### Contributing
 

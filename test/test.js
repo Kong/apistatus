@@ -12,6 +12,7 @@ nockServer.get('/redirect').reply(301, undefined).persist();
 nockServer.get('/123').reply(123, undefined).persist();
 nockServer.get('/500').reply(500, undefined).persist();
 nockServer.get('/501').reply(501, undefined).persist();
+nockServer.get('/777').reply(777, undefined).persist();
 
 nockServer.get('/404').reply(404, undefined, {
   Location: 'http://localhost:9876/ok'
@@ -23,6 +24,25 @@ nockServer.get('/301').reply(301, undefined, {
   Location: 'http://localhost:9876/ok'
 })
 
+describe('Package', function () {
+  it('should still work with missing callback', function(){
+    assert.doesNotThrow(function() { 
+      apistatus('http://localhost:9876/ok') 
+    }, Error)
+  })
+  it('should throw error for missing URL', function(done){
+    assert.throws(function() { 
+      apistatus(function(){}) 
+    }, Error)
+    done()
+  })
+  it('should throw error for invalid URL', function(){
+    assert.throws(function() { 
+      apistatus(53, function(){}) 
+    }, Error)
+  })
+})
+
 describe('Online', function () {
   it('should return online true', function(done){
     apistatus('http://localhost:9876/ok', function(status){
@@ -30,9 +50,9 @@ describe('Online', function () {
       done()
     })
   })
-  it('should return statusDescription "OK"', function(done){
+  it('should return message "OK"', function(done){
     apistatus('http://localhost:9876/ok', function(status){
-      assert.equal(status.statusDescription, "OK")
+      assert.equal(status.message, "OK")
       done()
     })
   })
@@ -89,19 +109,19 @@ describe('Redirects', function () {
 describe('Errors', function () {
   it('should return client errors', function(done){
     apistatus('http://localhost:9876/404', function(status){
-      assert.equal(status.statusType, "Client Error")
+      assert.equal(status.category, "Client Error")
       done()
     })
   })
   it('should return server errors', function(done){
     apistatus('http://localhost:9876/501', function(status){
-      assert.equal(status.statusType, "Server Error")
+      assert.equal(status.category, "Server Error")
       done()
     })
   })
   it('should return message "Not Found"', function(done){
     apistatus('http://localhost:9876/404', function(status){
-      assert.equal(status.statusDescription, "Not Found")
+      assert.equal(status.message, "Not Found")
       done()
     })
   })
@@ -129,15 +149,21 @@ describe('Status Codes', function () {
       done()
     })
   })
+  it('should return non-standard status cpde', function(done){
+    apistatus('http://localhost:9876/777', function(status){
+      assert.equal(status.category, "Non-standard Category")
+      done()
+    })
+  })
   it('should return non-standard status description', function(done){
     apistatus('http://localhost:9876/123', function(status){
-      assert.equal(status.statusDescription, "Non-standard Status")
+      assert.equal(status.message, "Non-standard Status")
       done()
     })
   })
   it('should return standard status descriptions', function(done){
     apistatus('http://localhost:9876/500', function(status){
-      assert.equal(status.statusDescription, "Internal Server Error")
+      assert.equal(status.message, "Internal Server Error")
       done()
     })
   })
@@ -151,13 +177,19 @@ describe('HAR Requests', function () {
       done()
     })
   })
-  it('should have three results ', function(done){
+  it('should have three results', function(done){
     apistatus(har, function(data){
       assert.equal(data.length, 3)
       done()
     })
   })
-  it('should have have the correct status codes ', function(done){
+  it('should throw an error on invalid har', function(done){
+    assert.throws(function() { 
+      apistatus({"not": "a har file"}, function(){}) 
+    }, Error)
+    done()
+  })
+  it('should have have the correct status codes', function(done){
     apistatus(har, function(data){
       var codes = [200, 301, 501], c = 0
       data.map(function(d){
@@ -168,4 +200,11 @@ describe('HAR Requests', function () {
   })
 })
 
-
+describe('Latency', function () {
+  it('should be a number', function(){
+    apistatus('http://mockbin.com', function(status){
+      assert.equal(typeof status.latency, "number")
+      done()
+    })
+  })
+})
